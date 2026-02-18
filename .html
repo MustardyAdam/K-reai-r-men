@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen House · Dugonics tér</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf7f2;
+            color: #2e2e2e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+        header {
+            background-color: #ffffffdd;
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #eae2d7;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #4f3b2c;
+        }
+        .logo span {
+            font-weight: 300;
+            color: #b45f4b;
+            font-size: 1.4rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2e2e2e;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-links a:hover {
+            color: #b45f4b;
+            border-bottom-color: #b45f4b;
+        }
+        section {
+            padding: 4rem 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #3f2e22;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            width: 70px;
+            height: 3px;
+            background: #ff995a;
+            margin-top: 0.5rem;
+        }
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f4ede5 0%, #fcf9f5 100%);
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-content .kicker {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            color: #9b6b5c;
+            margin-bottom: 0.5rem;
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            color: #2c1e15;
+            margin-bottom: 1.5rem;
+        }
+        .hero-content h1 i {
+            font-style: italic;
+            font-weight: 400;
+            color: #b45f4b;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #4a3f38;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .stat-item {
+            text-align: left;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            color: #4f3b2c;
+        }
+        .stat-label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #776b63;
+        }
+        .hero-image {
+            flex: 0.9;
+            background: #ddd3c9;
+            border-radius: 30px;
+            height: 450px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400"><rect width="400" height="400" fill="%23d9b8a4" /><circle cx="200" cy="200" r="140" fill="%23f2ded0"/><path d="M130 190 L270 190 L250 260 L150 260 Z" fill="%23a17f6f" opacity="0.6"/><circle cx="150" cy="160" r="12" fill="%23fcf9f5"/><circle cx="250" cy="160" r="12" fill="%23fcf9f5"/><path d="M180 210 Q200 240 220 210" stroke="%235d3e2e" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.03);
+        }
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .feature-list {
+            list-style: none;
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .feature-list i {
+            color: #b45f4b;
+            width: 28px;
+            font-size: 1.4rem;
+        }
+        .concept-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+            border: 1px solid #f0e4da;
+        }
+        .concept-card .highlight {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #b45f4b;
+            line-height: 1;
+        }
+        .space-showcase {
+            background-color: #f4ede5;
+        }
+        .space-grid {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .space-info {
+            flex: 1;
+            min-width: 260px;
+        }
+        .space-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .space-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .detail-box {
+            background: white;
+            padding: 1.5rem 1rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .detail-box i {
+            font-size: 2.2rem;
+            color: #b45f4b;
+            margin-bottom: 0.5rem;
+        }
+        .floorplan {
+            flex: 1.2;
+            background: #e3d9d0;
+            border-radius: 36px;
+            padding: 2rem;
+            background-image: radial-gradient(circle at 30% 50%, #cfb9aa 1px, transparent 1px);
+            background-size: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+        }
+        .floorplan-svg {
+            width: 100%;
+            max-width: 400px;
+        }
+        .demand {
+            background: white;
+        }
+        .demand-cards {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        .card {
+            flex: 1 1 200px;
+            background: #fcf9f5;
+            padding: 2rem 1.5rem;
+            border-radius: 28px;
+            border: 1px solid #e9dbd1;
+        }
+        .card i {
+            font-size: 2.5rem;
+            color: #b45f4b;
+            margin-bottom: 1.5rem;
+        }
+        .card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial {
+            margin-top: 3rem;
+            background: #f4ede5;
+            padding: 2.5rem;
+            border-radius: 40px;
+            color: #2c1e15;
+            font-size: 1.2rem;
+        }
+        .testimonial i {
+            color: #9b6b5c;
+            margin-right: 0.5rem;
+        }
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        .contact-section {
+            background: #2e2e2e;
+            color: #f0e8e0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+        .contact-info i {
+            width: 32px;
+            color: #ff995a;
+        }
+        .social-links {
+            margin-top: 2rem;
+        }
+        .social-links a {
+            color: #ff995a;
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: ff995a;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #24201b;
+            color: #9b8e84;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 800px) {
+            .hero .container { flex-direction: column; }
+            .concept-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">RAMEN <span>│</span> HOUSE</div>
+            <div class="nav-links">
+                <a href="#home">Kezdőlap</a>
+                <a href="#koncepcio">Koncepció</a>
+                <a href="#helyszin">Helyszín</a>
+                <a href="#kereslet">Kereslet</a>
+                <a href="#kapcsolat">Kapcsolat</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="kicker">Új vállalkozás · 2025</div>
+                <h1>Koreai ramen<br>a <i>Dugonics tér</i> szívében</h1>
+                <p class="hero-desc">22 m² autentikus ízvilág, forgalmas egyetemi környezetben.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">22 m²</div>
+                        <div class="stat-label">helyiség</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+40%</div>
+                        <div class="stat-label">ételforgalom / év</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0 perc</div>
+                        <div class="stat-label">egyetemtől</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+    </section>
+
+    <section id="koncepcio">
+        <div class="container">
+            <h2 class="section-title">Koncepció & atmoszféra</h2>
+            <div class="concept-grid">
+                <div class="concept-text">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-utensils"></i> Házi ramen levesek, japán–koreai fusion</li>
+                        <li><i class="fas fa-location-dot"></i> Dugonics tér 2. – napi 5000+ áthaladó</li>
+                        <li><i class="fas fa-leaf"></i> Friss alapanyagok, gyors kiszolgálás</li>
+                        <li><i class="fas fa-wifi"></i> Diákbarát árak, ingyenes wifi</li>
+                    </ul>
+                </div>
+                <div class="concept-card">
+                    <div class="highlight">201</div>
+                    <div class="small">egyetemi órák / hét a szomszédban</div>
+                    <hr style="margin:1.5rem 0; border-color:#eadcd2;">
+                    <div><i class="fas fa-bowl-food" style="color:#b45f4b; margin-right:0.8rem;"></i> <strong>Területi előny:</strong> jelenleg nincs ázsiai gyorsétkezde a téren.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="helyszin" class="space-showcase">
+        <div class="container">
+            <h2 class="section-title">22 m² – minden cent kihasználva</h2>
+            <div class="space-grid">
+                <div class="space-info">
+                    <h3>Egy lakásból ramen bár</h3>
+                    <p>16 ülőhely + elvitel. Minimalista, meleg design.</p>
+                    <div class="space-details">
+                        <div class="detail-box"><i class="fas fa-chair"></i> 12 bárszék + 4 asztal</div>
+                        <div class="detail-box"><i class="fas fa-fire-burner"></i> 2 főzőállás</div>
+                        <div class="detail-box"><i class="fas fa-clock"></i> 5 perc átlag várakozás</div>
+                        <div class="detail-box"><i class="fas fa-box"></i> Elvitel / delivery</div>
+                    </div>
+                </div>
+                <div class="floorplan">
+                    <svg class="floorplan-svg" viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="280" height="200" rx="16" fill="#fcf9f5" stroke="#b45f4b" stroke-width="2" stroke-dasharray="6 6" />
+                        <rect x="30" y="30" width="100" height="70" rx="8" fill="#e6d7cc" stroke="#7a5a4a" stroke-width="1.5" />
+                        <text x="40" y="65" font-size="8" fill="#4f3b2c">KONYHA</text>
+                        <circle cx="190" cy="60" r="18" fill="#d9b8a4" stroke="#7a5a4a" stroke-width="1.5" />
+                        <text x="180" y="67" font-size="8" fill="#3f2e22">bár</text>
+                        <rect x="150" y="110" width="110" height="40" rx="12" fill="#eadcd2" stroke="#7a5a4a" stroke-width="1.2" />
+                        <text x="180" y="135" font-size="8" fill="#3f2e22">asztalok</text>
+                        <line x1="50" y1="150" x2="120" y2="150" stroke="#b45f4b" stroke-width="2" stroke-dasharray="3 3" />
+                        <text x="55" y="140" font-size="7" fill="#b45f4b">bejárat</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kereslet" class="demand">
+        <div class="container">
+            <h2 class="section-title">Nagy a kereslet</h2>
+            <div class="demand-cards">
+                <div class="card">
+                    <i class="fas fa-people-group"></i>
+                    <h3>+3000</h3>
+                    <p>egyetemi hallgató napi áthaladása a téren</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-store"></i>
+                    <h3>0</h3>
+                    <p>koreai ramen bolt a környéken</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>87%</h3>
+                    <p>igény gyors, ázsiai melegételre</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <i class="fas fa-quote-left"></i> A Dugonics tér Szeged gasztronómiai szíve. Egy koreai ramen bár hiánycikk, ekkora forgalom mellett szinte garantált a siker.
+                <div class="testimonial-author">— Gasztro Ügynökség</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kapcsolat" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color:#f0e8e0;">Kapcsolat</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-map-pin"></i> 6720 Szeged, Dugonics tér 2.</p>
+                    <p><i class="fas fa-phone-alt"></i> +36 30 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> hello@ramenhouse.hu</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-clock"></i> H–Cs: 11:00–22:00<br>P–V: 12:00–23:00</p>
+                    <p><i class="fas fa-credit-card"></i> Készpénz, bankkártya, SZÉP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Ramen House · Dugonics tér</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                const targetId = this.getAttribute('href');
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
