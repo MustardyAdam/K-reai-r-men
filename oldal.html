@@ -83,13 +83,7 @@
             color: #3f2e22;
             position: relative;
         }
-        .section-title:after {
-            content: '';
-            width: 70px;
-            height: 3px;
-            background: #ff995a;
-            margin-top: 0.5rem;
-        }
+
         .hero {
             min-height: 85vh;
             display: flex;
@@ -130,22 +124,26 @@
         }
         .hero-stats {
             display: flex;
-            gap: 2.5rem;
+            gap: 3rem;
+            align-items: flex-end;
         }
         .stat-item {
             text-align: left;
         }
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 600;
             font-family: 'Playfair Display', serif;
             color: #4f3b2c;
+            line-height: 1;
+            margin-bottom: 0.2rem;
         }
         .stat-label {
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1px;
             color: #776b63;
+            white-space: nowrap;
         }
         .hero-image {
             flex: 0.9;
@@ -299,6 +297,19 @@
             width: 32px;
             color: #ff995a;
         }
+        .contact-info .nyitas {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .contact-info .nyitas i {
+            width: 32px;
+            flex-shrink: 0;
+        }
+        .contact-info .nyitas span {
+            display: inline-block;
+            min-width: 70px;
+        }
         .social-links {
             margin-top: 2rem;
         }
@@ -309,7 +320,7 @@
             transition: color 0.2s;
         }
         .social-links a:hover {
-            color: ff995a;
+            color: #ffffff;
         }
         footer {
             text-align: center;
@@ -343,20 +354,21 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <div class="kicker">Új vállalkozás · 2025</div>
+                <div class="kicker">ÚJ VÁLLALKOZÁS · 2025</div>
                 <h1>Koreai ramen<br>a <i>Dugonics tér</i> szívében</h1>
-                <p class="hero-desc">Ázsiai autentikus ízvilág.</p>
+                <p class="hero-desc">22 m² autentikus ízvilág, forgalmas egyetemi környezetben.</p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">város központján</div>
-                        
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">m²</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">kereslet</div>
+                        <div class="stat-number">+40%</div>
+                        <div class="stat-label">ÉTELFORGALOM / ÉV</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">gyorsaság</div>
-                        
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">PERC EGYETEMTŐL</div>
                     </div>
                 </div>
             </div>
@@ -370,15 +382,15 @@
             <div class="concept-grid">
                 <div class="concept-text">
                     <ul class="feature-list">
-                        <li><i class="fas fa-utensils"></i> Házi ramen levesek, kínai–koreai fusion</li>
-                        <li><i class="fas fa-location-dot"></i> Kígyó utca 6. – napi 500+ látogató</li>
+                        <li><i class="fas fa-utensils"></i> Házi ramen levesek, japán–koreai fusion</li>
+                        <li><i class="fas fa-location-dot"></i> Dugonics tér 2. – napi 5000+ áthaladó</li>
                         <li><i class="fas fa-leaf"></i> Friss alapanyagok, gyors kiszolgálás</li>
                         <li><i class="fas fa-wifi"></i> Diákbarát árak, ingyenes wifi</li>
                     </ul>
                 </div>
                 <div class="concept-card">
-                    <div class="highlight">6-21-ig nyitva</div>
-                    <div class="small">szinte a nap bármely pontján elérhető</div>
+                    <div class="highlight">201</div>
+                    <div class="small">egyetemi órák / hét a szomszédban</div>
                     <hr style="margin:1.5rem 0; border-color:#eadcd2;">
                     <div><i class="fas fa-bowl-food" style="color:#b45f4b; margin-right:0.8rem;"></i> <strong>Területi előny:</strong> jelenleg nincs ázsiai gyorsétkezde a téren.</div>
                 </div>
@@ -388,33 +400,19 @@
 
     <section id="helyszin" class="space-showcase">
         <div class="container">
-            <h2 class="section-title">forgalom bírása</h2>
+            <h2 class="section-title">22 m² – minden cent kihasználva</h2>
             <div class="space-grid">
                 <div class="space-info">
                     <h3>Egy lakásból ramen bár</h3>
                     <p>16 ülőhely + elvitel. Minimalista, meleg design.</p>
                     <div class="space-details">
+                        <div class="detail-box"><i class="fas fa-fire"></i> 2 főzőállás</div>
                         <div class="detail-box"><i class="fas fa-chair"></i> 12 bárszék + 4 asztal</div>
-                        <div class="detail-box"><i class="fas fa-fire-burner"></i> 2 főzőállás</div>
-                        <div class="detail-box"><i class="fas fa-clock"></i> 5 perc átlag várakozás</div>
+                        <div class="detail-box"><i class="fas fa-hourglass-half"></i> 5 perc átlag várakozás</div>
                         <div class="detail-box"><i class="fas fa-box"></i> Elvitel / delivery</div>
                     </div>
                 </div>
-                <div class="floorplan">
-                    <svg class="floorplan-svg" viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="10" y="10" width="280" height="200" rx="16" fill="#fcf9f5" stroke="#b45f4b" stroke-width="2" stroke-dasharray="6 6" />
-                        <rect x="30" y="30" width="100" height="70" rx="8" fill="#e6d7cc" stroke="#7a5a4a" stroke-width="1.5" />
-                        <text x="40" y="65" font-size="8" fill="#4f3b2c">KONYHA</text>
-                        <circle cx="190" cy="60" r="18" fill="#d9b8a4" stroke="#7a5a4a" stroke-width="1.5" />
-                        <text x="180" y="67" font-size="8" fill="#3f2e22">bár</text>
-                        <rect x="150" y="110" width="110" height="40" rx="12" fill="#eadcd2" stroke="#7a5a4a" stroke-width="1.2" />
-                        <text x="180" y="135" font-size="8" fill="#3f2e22">asztalok</text>
-                        <line x1="50" y1="150" x2="120" y2="150" stroke="#b45f4b" stroke-width="2" stroke-dasharray="3 3" />
-                        <text x="55" y="140" font-size="7" fill="#b45f4b">bejárat</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
+                
     </section>
 
     <section id="kereslet" class="demand">
@@ -422,23 +420,23 @@
             <h2 class="section-title">Nagy a kereslet</h2>
             <div class="demand-cards">
                 <div class="card">
-                    <i class="fas fa-people-group"></i>
-                    <h3>3 nagy iskola 100m-en belül</h3>
-                    <p>diákok napi áthaladása a téren</p>
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>+3000</h3>
+                    <p>egyetemi hallgató napi áthaladása a téren</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-store"></i>
-                    <h3>első</h3>
+                    <h3>0</h3>
                     <p>koreai ramen bolt a környéken</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>terjeszkedés</h3>
-                    <p>nagy igény, ázsiai melegételre</p>
+                    <h3>87%</h3>
+                    <p>igény gyors, ázsiai melegételre</p>
                 </div>
             </div>
             <div class="testimonial">
-                <i class="fas fa-quote-left"></i> A Dugonics tér Szeged gasztronómiai szíve. Egy koreai ramen bár hiánycikk, ekkora forgalom mellett szinte garantált a siker.
+                <i class="fas fa-quote-left"></i> A Dugonics tér Szeged gasztronómiai szíve. Egy koreai ramen bár hiánycikk, ekkora forgalom mellett szinte garantált a siker.<i class="fas fa-quote-left"></i>
                 <div class="testimonial-author">— Gasztro Ügynökség</div>
             </div>
         </div>
@@ -449,30 +447,37 @@
             <h2 class="section-title" style="color:#f0e8e0;">Kapcsolat</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p><i class="fas fa-map-pin"></i> 6720 Szeged, Kígyó utca 6.</p>
+                    <p><i class="fas fa-map-pin"></i> 6720 Szeged, Dugonics tér 2.</p>
                     <p><i class="fas fa-phone-alt"></i> +36 30 123 4567</p>
-                    <p><i class="fas fa-envelope"></i>nemertemtanar5@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i> hello@ramenhouse.hu</p>
                     <div class="social-links">
-                        <a href="www.instagram.com/koreai.ramen.szeged/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@koreai.ramen.szeged"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="contact-info">
-                    <p><i class="fas fa-clock"></i> H–Cs: 07:00–20:00<br>P–V: 12:00–23:00</p>
-                    <p><i class="fas fa-credit-card"></i> Készpénz, bankkártya, SZÉP</p>
+                    <div class="nyitas">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <div><span>H–Cs:</span> 11:00–22:00</div>
+                            <div><span>P–V:</span> 12:00–23:00</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem;"><i class="fas fa-credit-card"></i> Készpénz, bankkártya, SZÉP</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Ramen House · Dugonics tér</p>
+        <p>© 2025 Ramen House · 22 m² · Dugonics tér</p>
     </footer>
 
     <script>
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault(); 
+                e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetEl = document.querySelector(targetId);
                 if (targetEl) {
@@ -482,6 +487,4 @@
         });
     </script>
 </body>
-</html>
-
-
+            </html>
